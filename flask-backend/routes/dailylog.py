@@ -18,5 +18,5 @@ def log():
 @dailylog_bp.route('/history/<user_id>', methods=['GET'])
 def get_history(user_id):
     db = read_db()
-    logs = [l for l in db.get('dailylogs', []) if l.get('userId') == user_id]
+    logs = [l for l in db.get('dailylogs',[]) if l.get('userId') == user_id]
     return jsonify(sorted(logs, key=lambda x: x['date'], reverse=True))

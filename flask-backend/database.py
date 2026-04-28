@@ -5,10 +5,7 @@ DB_FILE = os.path.join(os.path.dirname(__file__), 'data.json')
 
 def read_db():
     if not os.path.exists(DB_FILE):
-        write_db({
-            "users": [], "breakdowns": [], "schedules": [],
-            "moods": [], "dailylogs": [], "profiles": [], "textLogs": []
-        })
+        write_db({"users":[],"breakdowns":[],"schedules":[],"moods":[],"dailylogs":[],"profiles":[],"textLogs":[]})
     with open(DB_FILE, 'r') as f:
         return json.load(f)
 

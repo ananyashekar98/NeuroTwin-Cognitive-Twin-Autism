@@ -18,5 +18,5 @@ def log_mood():
 @mood_bp.route('/history/<user_id>', methods=['GET'])
 def get_history(user_id):
     db = read_db()
-    moods = [m for m in db.get('moods', []) if m.get('userId') == user_id]
+    moods = [m for m in db.get('moods',[]) if m.get('userId') == user_id]
     return jsonify(sorted(moods, key=lambda x: x['date'], reverse=True))

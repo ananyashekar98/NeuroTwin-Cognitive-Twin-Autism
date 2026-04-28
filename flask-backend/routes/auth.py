@@ -12,7 +12,7 @@ def register():
     if any(u['email'] == data['email'] for u in db['users']):
         return jsonify({'error': 'Email already registered'}), 400
     hashed = bcrypt.hashpw(data['password'].encode(), bcrypt.gensalt()).decode()
-    user = {'id': str(uuid.uuid4()), 'name': data['name'], 'email': data['email'], 'password': hashed, 'role': data.get('role', 'caregiver')}
+    user = {'id': str(uuid.uuid4()), 'name': data['name'], 'email': data['email'], 'password': hashed, 'role': data.get('role','caregiver')}
     db['users'].append(user)
     write_db(db)
     token = jwt.encode({'id': user['id'], 'name': user['name'], 'exp': datetime.datetime.utcnow() + datetime.timedelta(days=7)}, SECRET, algorithm='HS256')
