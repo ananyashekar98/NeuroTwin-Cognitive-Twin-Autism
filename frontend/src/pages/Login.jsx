@@ -46,13 +46,14 @@ export default function Login({ onLogin }) {
           </div>
           {tab === 'register' && (
             <div className="form-group">
-              <label>Role</label>
-              <select name="role" value={form.role} onChange={handle}>
-                <option value="caregiver">Caregiver</option>
-                <option value="therapist">Therapist</option>
-              </select>
-            </div>
-          )}
+  <label>Role</label>
+  <select name="role" value={form.role} onChange={handle}>
+    <option value="caregiver">🩺 Caregiver</option>
+    <option value="therapist">👨‍⚕️ Therapist</option>
+    <option value="patient">🧑 Patient / Individual</option>
+  </select>
+</div>
+)}
           <button className="btn btn-primary" style={{ width: '100%', padding: 14, fontSize: 15, marginTop: 6 }} onClick={submit} disabled={loading}>
             {loading ? 'Please wait...' : tab === 'login' ? '🔐 Login' : '✅ Create Account'}
           </button>
