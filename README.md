@@ -318,11 +318,7 @@ Switch language using the buttons at the bottom of the sidebar.
 
 ---
 
-## 📄 License
 
-This project is developed for academic purposes at **Global Academy of Technology, Bengaluru**.
-
----
 
 <div align="center">
 
