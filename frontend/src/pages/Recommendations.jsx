@@ -1,21 +1,25 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useTranslation } from 'react-i18next'
 const API = 'http://localhost:5000/api'
+
 export default function Recommendations({ user }) {
+  const { t } = useTranslation()
   const [data, setData] = useState(null)
   useEffect(() => { axios.get(`${API}/recommendations/${user.id}`).then(r => setData(r.data)).catch(() => {}) }, [user.id])
   const icons = { Urgent:'🚨', Sensory:'👂', Routine:'📅', Communication:'💬', Calming:'🧘', Environment:'🏠' }
+
   return (
     <div>
-      <div className="page-header"><h1>💡 Recommendations</h1><p>Personalized support strategies based on logged history</p></div>
+      <div className="page-header"><h1>💡 {t('recommendationsTitle')}</h1><p>{t('recommendationsSubtitle')}</p></div>
       {data && (
         <div className="cards-grid" style={{ marginBottom:28 }}>
-          <div className="card"><div className="card-icon">⚡</div><div className="card-value">{data.breakdownCount}</div><div className="card-label">Breakdowns Logged</div></div>
-          <div className="card"><div className="card-icon">📊</div><div className="card-value">{data.avgIntensity}</div><div className="card-label">Avg Intensity</div></div>
+          <div className="card"><div className="card-icon">⚡</div><div className="card-value">{data.breakdownCount}</div><div className="card-label">{t('breakdownsLogged')}</div></div>
+          <div className="card"><div className="card-icon">📊</div><div className="card-value">{data.avgIntensity}</div><div className="card-label">{t('avgIntensity')}</div></div>
         </div>
       )}
       <div className="form-card">
-        <h3>🎯 Personalized Strategies</h3>
+        <h3>{t('personalizedStrategies')}</h3>
         {data?.suggestions?.map(s => (
           <div key={s.id} className={`suggestion-card priority-${s.priority}`}>
             <span style={{ fontSize:24 }}>{icons[s.category]||'💡'}</span>
