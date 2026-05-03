@@ -15,6 +15,7 @@ import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from './components/LanguageSwitcher'
 import DarkModeToggle from './components/DarkModeToggle'
 import NotificationBell from './components/NotificationBell'
+import ModelTraining from './pages/ModelTraining'
 
 const CAREGIVER_NAV = [
   { id: 'dashboard',       label: 'dashboard',       icon: '🏠' },
@@ -27,6 +28,7 @@ const CAREGIVER_NAV = [
   { id: 'dailylog',        label: 'dailyLog',        icon: '📓' },
   { id: 'reportcard',      label: 'Report Card',     icon: '📊' },
   { id: 'export',          label: 'exportReport',    icon: '📄' },
+  { id: 'training', label: 'ML Training', icon: '🤖' },
 ]
 
 const PATIENT_NAV = [
@@ -74,6 +76,7 @@ export default function App() {
     dailylog:        <DailyLog user={user} />,
     export:          <ExportReport user={user} />,
     reportcard:      <ReportCard user={user} />,
+    training: <ModelTraining user={user} />,
   }
 
   return (

@@ -1,0 +1,16 @@
+trigger,intensity,duration,location,sensory
+Sensory overload,8,20,School,1
+Loud noise,7,15,Mall,1
+Routine change,6,10,Home,0
+Social interaction,5,20,School,0
+Transition,7,25,Bus,0
+Sensory overload,9,30,School,1
+Loud noise,8,20,Mall,1
+Routine change,4,10,Home,0
+Communication failure,6,15,School,0
+Hunger/fatigue,5,10,Home,0
+Sensory overload,7,20,School,1
+Loud noise,6,15,Park,1
+Transition,8,25,School,0
+Social interaction,4,10,Home,0
+Routine change,7,20,School,0
