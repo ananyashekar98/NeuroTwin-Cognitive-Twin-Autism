@@ -57,10 +57,17 @@ export default function Schedule({ user }) {
         </div>
         <button className="btn btn-primary" style={{ marginTop:20 }} onClick={submit}>{t('predictRisk')}</button>
         {result && (
-          <div className="alert alert-info" style={{ marginTop:20, fontSize:16 }}>
-            {t('mlRiskScore')}: <strong className={getRiskClass(result.riskScore)}>{result.riskScore}% — {result.riskCategory} Risk</strong>
-          </div>
-        )}
+  <div className="alert alert-info" style={{ marginTop:20, fontSize:16 }}>
+    {t('mlRiskScore')}: <strong className={getRiskClass(result.riskScore)}>
+      {result.riskScore}% — {result.riskCategory} Risk
+    </strong>
+    {result.personalized && (
+      <span style={{ marginLeft:12, background:'#7c83fd', color:'#fff', padding:'2px 10px', borderRadius:10, fontSize:12, fontWeight:700 }}>
+        🎯 Personalized Model
+      </span>
+    )}
+  </div>
+)}
       </div>
       <div className="table-card">
         <h3>📋 {t('scheduleHistory')}</h3>

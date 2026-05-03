@@ -1,0 +1,11 @@
+activity,type,environment,time,risk_score
+School assembly,social,crowded,09:00,85
+Therapy session,therapy,indoor,10:00,15
+Lunch break,unstructured,noisy,13:00,55
+Art class,structured,indoor,14:00,20
+Bus ride home,transition,public,15:00,80
+Morning circle,social,crowded,08:30,75
+Reading time,structured,indoor,11:00,15
+Playground,unstructured,outdoor,12:00,60
+Music class,structured,indoor,14:30,25
+Shopping trip,social,crowded,16:00,90

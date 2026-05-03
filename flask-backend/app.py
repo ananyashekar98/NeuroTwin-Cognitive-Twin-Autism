@@ -12,6 +12,7 @@ from routes.recommendations import recommendations_bp
 from routes.profile         import profile_bp
 from routes.mood            import mood_bp
 from routes.dailylog        import dailylog_bp
+from routes.retrain import retrain_bp
 
 app = Flask(__name__)
 CORS(app, origins=['http://localhost:5173'])
@@ -25,6 +26,7 @@ app.register_blueprint(recommendations_bp, url_prefix='/api/recommendations')
 app.register_blueprint(profile_bp,         url_prefix='/api/profile')
 app.register_blueprint(mood_bp,            url_prefix='/api/mood')
 app.register_blueprint(dailylog_bp,        url_prefix='/api/dailylog')
+app.register_blueprint(retrain_bp, url_prefix='/api/retrain')
 
 @app.route('/')
 def home():
